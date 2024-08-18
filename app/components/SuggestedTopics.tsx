@@ -23,7 +23,7 @@ export function SuggestedTopics() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-[80%] p-4 bg-[#102C57] rounded-xl max-h-[80%] overflow-y-auto">
+    <div className="flex flex-col items-center justify-center w-[100%] md:w-[80%] p-4 bg-[#102C57] rounded-xl max-h-[80%] overflow-y-auto">
       <h2 className="text-xl font-semibold m-4">Or Try These Topics💡:</h2>
       <ul className="min-w-[80%] space-y-3 text-black m-4 overflow-y-auto ">
         {topics.map((topic, index) => (

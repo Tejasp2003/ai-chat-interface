@@ -36,7 +36,7 @@ const Conversation = ({
   };
 
   return (
-    <div className="flex flex-col items-start justify-end p-4 bg-[#102C57] w-full rounded-xl h-[88vh] overflow-y-auto">
+    <div className="flex flex-col items-start justify-end p-2 md:p-4 bg-[#102C57] w-full rounded-xl h-[88vh] overflow-y-auto">
       <div className="w-full overflow-auto">
         <AnimatePresence>
           {conversation.map((message, index) => (
@@ -49,13 +49,13 @@ const Conversation = ({
               }
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className={`p-4 m-2 flex items-start md:max-w-[75%] ${
+              className={`p-3 md:p-4 m-2  mx-auto md:mx-0 flex items-start md:max-w-[75%] ${
                 message.role === "user"
                   ? "flex-row-reverse items-center gap-4 md:ml-auto"
                   : "items-start justify-center space-x-4"
               } rounded-lg ${
                 message.role === "user"
-                  ? "bg-[#F0F3F4] md:w-fit w-full"
+                  ? "bg-[#F0F3F4] md:w-fit w-full "
                   : "bg-[#F7E7DC] md:w-fit w-full md:max-w-[65%]"
               }`}
             >
@@ -100,7 +100,7 @@ const Conversation = ({
 
       <form
         onSubmit={handleSend}
-        className="w-[80%] flex flex-row items-center justify-center space-x-3 mx-auto mt-4"
+        className=" w-[100%] md:w-[80%] flex flex-row items-center justify-center space-x-3 mx-auto mt-4"
       >
         <div className="flex flex-row items-center justify-center space-x-3 w-full mx-auto">
           <input
