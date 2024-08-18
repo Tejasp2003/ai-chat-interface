@@ -5,7 +5,8 @@
 ## How to run:
 1. Clone this github repo: https://github.com/Tejasp2003/vexio.in-ai-chat-interface
 2. open your terminal and run this command: `npm i`
-3. Once, all the dependencies are installed, you can run the project using the command: `npm run dev`
+3. create a .env file in your root directory and add `GOOGLE_GENERATIVE_AI_API_KEY`
+4. Once, all the dependencies are installed, you can run the project using the command: `npm run dev`
 
 ## Features:
 1. Chat Streaming
