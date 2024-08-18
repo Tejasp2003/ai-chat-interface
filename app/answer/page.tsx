@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import {
   Message,
   continueConversation,
@@ -11,7 +11,7 @@ import Conversation from "../components/Conversation";
 
 export const maxDuration = 30;
 
-export default function Home() {
+function HomeContent() {
   const [conversation, setConversation] = useState<Message[]>([]);
   const [input, setInput] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -93,5 +93,13 @@ export default function Home() {
         isLoading={isLoading}
       />
     </div>
+  );
+}
+
+export default function Home() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <HomeContent />
+    </Suspense>
   );
 }

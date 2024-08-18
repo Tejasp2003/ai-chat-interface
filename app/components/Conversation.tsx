@@ -49,14 +49,14 @@ const Conversation = ({
               }
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className={`p-4 m-2 flex items-start lg:max-w-[75%] ${
+              className={`p-4 m-2 flex items-start md:max-w-[75%] ${
                 message.role === "user"
-                  ? "flex-row-reverse items-center gap-4 lg:ml-auto"
+                  ? "flex-row-reverse items-center gap-4 md:ml-auto"
                   : "items-start justify-center space-x-4"
               } rounded-lg ${
                 message.role === "user"
                   ? "bg-[#F0F3F4] md:w-fit w-full"
-                  : "bg-[#F7E7DC] lg:w-fit w-full lg:max-w-[65%]"
+                  : "bg-[#F7E7DC] md:w-fit w-full md:max-w-[65%]"
               }`}
             >
               <span className="text-2xl text-black">
