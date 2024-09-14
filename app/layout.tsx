@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "AI Chat Interface",
-  description: "Created as a part of Assignment fo Vexio.in",
+  description: "Simple Chat Interface using gemini api",
 };
 
 export default function RootLayout({

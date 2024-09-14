@@ -6,8 +6,11 @@ import {
 } from "../actions/actions";
 import { readStreamableValue } from "ai/rsc";
 import { useSearchParams } from "next/navigation";
+import { motion } from "framer-motion";
 
 import Conversation from "../components/Conversation";
+
+
 
 export const maxDuration = 30;
 
@@ -36,6 +39,7 @@ function HomeContent() {
         const lastMessage = prev[prev.length - 1];
         setIsLoading(false);
         if (lastMessage && lastMessage.role === "assistant") {
+        
           return [
             ...prev.slice(0, -1),
             { ...lastMessage, content: textContent },
@@ -70,7 +74,7 @@ function HomeContent() {
     ]);
     let textContent = "";
     for await (const delta of readStreamableValue(newMessage)) {
-      textContent = `${textContent}${delta}`;
+      textContent = `${textContent}${delta}`; // Append each delta to the textContent
 
       setConversation([
         ...messages,
@@ -81,6 +85,7 @@ function HomeContent() {
   };
 
   return (
+    
     <div className="grainy text-[#102C57] flex flex-col items-center justify-start p-2 min-h-screen">
       <h2 className="text-2xl font-semibold p-4">Ask Your Question 🤖</h2>
       <hr className="w-full h-[2px] bg-gray-300 mb-2" />
@@ -93,6 +98,7 @@ function HomeContent() {
         isLoading={isLoading}
       />
     </div>
+  
   );
 }
 
